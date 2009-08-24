@@ -5,7 +5,7 @@ Summary:        OCaml bindings for the ncurses library
 License:        LGPL
 Group:          Development/Other
 URL:            http://www.nongnu.org/ocaml-tmk/
-Source0:        http://mirrors.linhub.com/savannah/ocaml-tmk/ocaml-curses-1.0.3.tar.gz
+Source0:        http://mirrors.linhub.com/savannah/ocaml-tmk/ocaml-curses-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  ocaml-findlib
 BuildRequires:  tetex-latex
