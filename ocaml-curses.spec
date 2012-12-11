@@ -1,15 +1,16 @@
 Name:           ocaml-curses
 Version:        1.0.3
-Release:        %mkrel 1
+Release:        2
 Summary:        OCaml bindings for the ncurses library
 License:        LGPL
 Group:          Development/Other
 URL:            http://www.nongnu.org/ocaml-tmk/
 Source0:        http://mirrors.linhub.com/savannah/ocaml-tmk/ocaml-curses-%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  ocaml-findlib
-BuildRequires:  tetex-latex
+BuildRequires:  ocaml
+#BuildRequires:  tetex-latex
 #BuildRequires:  texlive-texmf-cmsuper
+BuildRequires:  texlive
 BuildRequires:  ghostscript
 BuildRequires:  ghostscript-common
 BuildRequires:  ncurses-devel
@@ -67,4 +68,16 @@ rm -rf %{buildroot}
 %{_libdir}/ocaml/curses/*.a
 %{_libdir}/ocaml/curses/*.cmxa
 %{_libdir}/ocaml/curses/*.mli
+
+
+
+%changelog
+* Mon Aug 24 2009 Florent Monnier <blue_prawn@mandriva.org> 1.0.3-1mdv2010.1
++ Revision: 420318
+- added version macro in the source url
+
+* Thu Jul 30 2009 Florent Monnier <blue_prawn@mandriva.org> 1.0.3-1mdv2010.0
++ Revision: 404703
+- import ocaml-curses
+
 
