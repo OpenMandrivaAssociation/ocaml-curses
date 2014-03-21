@@ -1,34 +1,39 @@
-Name:           ocaml-curses
-Version:        1.0.3
-Release:        2
-Summary:        OCaml bindings for the ncurses library
-License:        LGPL
-Group:          Development/Other
-URL:            http://www.nongnu.org/ocaml-tmk/
-Source0:        http://mirrors.linhub.com/savannah/ocaml-tmk/ocaml-curses-%{version}.tar.gz
-BuildRequires:  ocaml-findlib
-BuildRequires:  ocaml
-#BuildRequires:  tetex-latex
-#BuildRequires:  texlive-texmf-cmsuper
-BuildRequires:  texlive
-BuildRequires:  ghostscript
-BuildRequires:  ghostscript-common
-BuildRequires:  ncurses-devel
-BuildRequires:  gawk
-BuildRequires:  autoconf, automake, libtool
+%define _enable_debug_packages %{nil}
+%define debug_package %{nil}
+
+Summary:	OCaml bindings for the ncurses library
+Name:		ocaml-curses
+Version:	1.0.3
+Release:	3
+License:	LGPLv2.1+
+Group:		Development/Other
+Url:		http://www.nongnu.org/ocaml-tmk/
+Source0:	http://mirrors.linhub.com/savannah/ocaml-tmk/ocaml-curses-%{version}.tar.gz
+BuildRequires:	gawk
+BuildRequires:	ghostscript
+BuildRequires:	ghostscript-common
+BuildRequires:	libtool
+BuildRequires:	ocaml
+BuildRequires:	ocaml-findlib
+BuildRequires:	texlive
+BuildRequires:	pkgconfig(ncurses)
 
 %description
 The ncurses library provides functions to create rich text-mode interfaces.
 This package contains the necessary files to use the ncurses library in OCaml.
 
-%package        devel
-Summary:        Development files for %{name}
-Group:          Development/Other
-Requires:       %{name} = %{version}-%{release}
+#----------------------------------------------------------------------------
 
-%description    devel
+%package devel
+Summary:	Development files for %{name}
+Group:		Development/Other
+Requires:	%{name} = %{EVRD}
+
+%description devel
 The %{name}-devel package contains libraries and signature files for
 developing applications that use %{name}.
+
+#----------------------------------------------------------------------------
 
 %prep
 %setup -q
@@ -63,21 +68,8 @@ rm -rf %{buildroot}
 %{_libdir}/ocaml/stublibs/*.so*
 
 %files devel
-%defattr(-,root,root)
 %doc doc
 %{_libdir}/ocaml/curses/*.a
 %{_libdir}/ocaml/curses/*.cmxa
 %{_libdir}/ocaml/curses/*.mli
-
-
-
-%changelog
-* Mon Aug 24 2009 Florent Monnier <blue_prawn@mandriva.org> 1.0.3-1mdv2010.1
-+ Revision: 420318
-- added version macro in the source url
-
-* Thu Jul 30 2009 Florent Monnier <blue_prawn@mandriva.org> 1.0.3-1mdv2010.0
-+ Revision: 404703
-- import ocaml-curses
-
 
