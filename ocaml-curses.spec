@@ -4,7 +4,7 @@
 Summary:	OCaml bindings for the ncurses library
 Name:		ocaml-curses
 Version:	1.0.3
-Release:	3
+Release:	4
 License:	LGPLv2.1+
 Group:		Development/Other
 Url:		http://www.nongnu.org/ocaml-tmk/
