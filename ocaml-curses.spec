@@ -7,7 +7,7 @@ Version:	1.0.3
 Release:	4
 License:	LGPLv2.1+
 Group:		Development/Other
-Url:		http://www.nongnu.org/ocaml-tmk/
+Url:		https://www.nongnu.org/ocaml-tmk/
 Source0:	http://mirrors.linhub.com/savannah/ocaml-tmk/ocaml-curses-%{version}.tar.gz
 BuildRequires:	gawk
 BuildRequires:	ghostscript
